@@ -112,10 +112,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/lib64/libaudiocloudctrl.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
-    # Android 17's libbinder reads the boot id through an ifstream when the
-    # process starts, which seeks; the Android 16 policies kill it for that.
-    'system_ext/etc/seccomp_policy/tcmd.policy': blob_fixup()
-        .add_line_if_missing('lseek: 1'),
     # Android 17 removed libheif. The WFD utilities never call into it, they
     # only inherited the dependency from the image decoders they link.
     'system_ext/lib64/libwfdcommonutils.so': blob_fixup()

@@ -34,7 +34,7 @@ index 9a1743a..14c2a9c 100644
 @@ -7926,9 +7926,7 @@
      if-ne p1, v1, :cond_6
  
-     .line 528
+     .line 573
 -    invoke-static {}, Landroid/telephony/TelephonyBaseUtilsStub;->isMiuiRom()Z
 -
 -    move-result p2
