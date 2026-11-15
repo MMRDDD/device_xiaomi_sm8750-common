@@ -1,0 +1,22 @@
+From eb120691f8d897e583a2f60d2c7db4a87d7e56f6 Mon Sep 17 00:00:00 2001
+From: buildbot <noreply@github.com>
+Date: Mon, 16 Nov 2026 00:36:03 +0800
+Subject: [PATCH] QtiTelephony: Do not query the MIUI ROM type
+
+TelephonyBaseUtilsStub is only present in MIUI. Keep the normal AOSP feature check without linking against that class.
+---
+ smali/com/qti/phone/QtiRadioConfigAidl.smali | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/smali/com/qti/phone/QtiRadioConfigAidl.smali b/smali/com/qti/phone/QtiRadioConfigAidl.smali
+index 8e602f2..45ff460 100644
+--- a/smali/com/qti/phone/QtiRadioConfigAidl.smali
++++ b/smali/com/qti/phone/QtiRadioConfigAidl.smali
+@@ -1365,6 +1365,3 @@
+     .line 1167
+-    invoke-static {}, Landroid/telephony/TelephonyBaseUtilsStub;->isMiuiRom()Z
+-
+-    move-result v0
+-
++    const/4 v0, 0x0
+     if-eqz v0, :cond_0

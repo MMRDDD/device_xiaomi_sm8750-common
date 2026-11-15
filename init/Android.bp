@@ -93,6 +93,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "android.hardware.contexthub-service.qmi.rc",
+    src: "android.hardware.contexthub-service.qmi.rc",
+    sub_dir: "init",
+    device_specific: true,
+}
+
+prebuilt_etc {
     name: "init.xiaomi.rc",
     src: "init.xiaomi.rc",
     sub_dir: "init",

@@ -128,6 +128,8 @@ blob_fixups: blob_fixups_user_type = {
     # The manifest is shared with the Rust service, which implements V2.
     'product/etc/vintf/manifest/vendor.qti.qvirt-service.xml': blob_fixup()
         .regex_replace('<version>2</version>', '<version>1</version>'),
+    'system_ext/priv-app/QtiTelephony/QtiTelephony.apk': blob_fixup()
+        .apktool_patch('blob-patches/QtiTelephony'),
     'system_ext/priv-app/ims/ims.apk': blob_fixup()
         .apktool_unpack('blob-patches/ims')
         .patch_dir('blob-patches/ims')
@@ -135,9 +137,6 @@ blob_fixups: blob_fixups_user_type = {
         .stripzip(),
     'vendor/etc/media_codecs_sun.xml': blob_fixup()
         .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
-    'vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy': blob_fixup()
-        .add_line_if_missing('sched_get_priority_min: 1')
-        .add_line_if_missing('sched_get_priority_max: 1'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
     'vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so': xiaomi_audio_aidl_fixup()
