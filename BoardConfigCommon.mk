@@ -87,7 +87,7 @@ TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/sun_perf.config \
     vendor/xiaomi/sm8750.config
-TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=$(PRODUCT_DEVICE)
+TARGET_KERNEL_ADDITIONAL_FLAGS = TARGET_PRODUCT=$(PRODUCT_DEVICE) KERNEL_BUILD_NUMBER="$(KERNEL_BUILD_NUMBER)"
 
 # Kernel modules
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.system_dlkm))
