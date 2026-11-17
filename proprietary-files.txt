@@ -557,31 +557,37 @@ vendor/gpu/kbc/unified_kbcs_32.bin
 vendor/gpu/kbc/unified_kbcs_64.bin
 vendor/gpu/kbc/unified_ksqs.bin
 
-# Graphics (Adreno)
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
-vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
-vendor/lib64/libadreno_app_profiles.so
-vendor/lib64/libadreno_compiler_cl.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libCB.so
-vendor/lib64/libgpudataproducer.so
-vendor/lib64/libgsl.so
-vendor/lib64/libkcl.so
-vendor/lib64/libkernelmanager.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libllvm-qgl.so
-vendor/lib64/libmapperutils.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libOpenCL_adreno.so
+# Graphics (AGD 891.11.3)
+# 来自 AdrenoGraphicsDriver_891.11.3.apk；原始文件和修复后文件通过哈希固定。
+lib/arm64-v8a/eglSubDriverAndroid.so:vendor/lib64/egl/eglSubDriverAndroid.so|233c12b46632f618eaa00e44cef162ad78b205ae
+lib/arm64-v8a/libEGL_adreno.so:vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so|f044896c2d9d563605e204c44f686623290e89c7
+lib/arm64-v8a/libGLESv1_CM_adreno.so:vendor/lib64/egl/libGLESv1_CM_adreno.so|eca9f1696037ab4b72a88bd3c772397f207c644e
+lib/arm64-v8a/libGLESv2_adreno.so:vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so|25214a41795c7b83afa9e98c9ba2be46d786c778
+lib/arm64-v8a/libq3dtools_adreno.so:vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so|4218c1504e63d3b23acb5dec4a32e80bbece7a2d
+lib/arm64-v8a/libq3dtools_esx.so:vendor/lib64/egl/libq3dtools_esx.so|5b0689831fdcc36316c27b836a2141e4153f21c0
+lib/arm64-v8a/libVkLayer_ADRENO_qprofiler.so:vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so|e1bb1463ca87e918f094ab5eb5b7b24ebd1968bd
+lib/arm64-v8a/vulkan.adreno.so:vendor/lib64/hw/vulkan.adreno.so|87a5a209f719bfd2e7692825e8e45e1a5a0eede3
+lib/arm64-v8a/libadreno_app_profiles.so:vendor/lib64/libadreno_app_profiles.so|d96af798463bd47f2a924ce4f07a968c7b50e63d
+lib/arm64-v8a/libadreno_utils.so:vendor/lib64/libadreno_utils.so|417f2d72a7600b563258aab396cd883238df953d
+lib/arm64-v8a/libCB.so:vendor/lib64/libCB.so|e67c51230caae65fe5e55bb9c7df2b5bd70a382f
+lib/arm64-v8a/libcxx_shim.so:vendor/lib64/libcxx_shim.so|c97c4959f0684395f9e4d474158402dcd5f30f95|03e54d2f53285b1132c9b05129e70b6795070ea3
+lib/arm64-v8a/libdmabufheap.so:vendor/lib64/libdmabufheap_agd.so;FIX_SONAME|4d6cb4e3906e13b8b002aef16045bcaf7a8c99db|757baaa77931d3523f5949552d7e8fab76c0c6d2
+lib/arm64-v8a/libgpudataproducer.so:vendor/lib64/libgpudataproducer.so|9747a104218386729255f23c4df0bc2bb6c75b27
+lib/arm64-v8a/libgsl.so:vendor/lib64/libgsl.so|5cd208193a7280ae981e78ee9fb3e80a47c82581|6152a5f1b12652d3ac498f767e6d9cf60375a73b
+lib/arm64-v8a/libkcl.so:vendor/lib64/libkcl.so|80759858400f9bbb52f4a6cac7a6ac42d394d13c
+lib/arm64-v8a/libkernelmanager.so:vendor/lib64/libkernelmanager.so|8454c51f51a398ccc6c54d986dc1648095a7694d
+lib/arm64-v8a/libllvm-glnext.so:vendor/lib64/libllvm-glnext.so|7edbd4fa43a5aeba431494846887a82c68377d21
+lib/arm64-v8a/libllvm-qcom.so:vendor/lib64/libllvm-qcom.so|bb018712e8dd4359e4d828eff2b556e561d955a5
+lib/arm64-v8a/libllvm-qgl.so:vendor/lib64/libllvm-qgl.so|8945384d61435b4bc4970e803121f6de4e845b20
+lib/arm64-v8a/libmapperutils.so:vendor/lib64/libmapperutils.so|0371784a69c7db1e755245a6422d55ea2f5cbb10
+lib/arm64-v8a/libOpenCL.so:vendor/lib64/libOpenCL.so|e44d21b1223ad7e4df883cb8638e035cd2a3a7c8
+lib/arm64-v8a/libOpenCL_adreno.so:vendor/lib64/libOpenCL_adreno.so|f7a09cc48d949bf4e2b8e1a8330b295b8c31e5a1
+lib/arm64-v8a/libopencl_loader.so:vendor/lib64/libopencl_loader.so|d6450784f5cff22466757c88285aa9a3f047f0a8
+lib/arm64-v8a/vendor.qti.hardware.hexlp-V2-ndk.so:vendor/lib64/vendor.qti.hardware.hexlp-V2-ndk.so|5474ad209062594892b53354b2749e9f72bed4cc
+lib/arm64-v8a/vendor.qti.snapdragonServices-V2-ndk.so:vendor/lib64/vendor.qti.snapdragonServices-V2-ndk.so|46bc0d7bf21d06c73074c2a50446283a4c710e96
 
-# Graphics (Vulkan)
-vendor/lib64/hw/vulkan.adreno.so
+# Graphics (OpenCL compiler)
+vendor/lib64/libadreno_compiler_cl.so
 
 # Hexlp
 vendor/bin/hexlpservice
