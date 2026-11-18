@@ -16,11 +16,6 @@ from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
-from extract_utils.tools import (
-    DEFAULT_PATCHELF_VERSION,
-    patchelf_version_path_map,
-)
-from extract_utils.utils import run_cmd
 
 namespace_imports = [
     'device/xiaomi/sm8750-common',
@@ -70,23 +65,7 @@ def xiaomi_audio_aidl_fixup() -> blob_fixup:
     return fixup
 
 
-def remove_agd_shim_runpath(ctx, file, file_path: str, **kwargs):
-    # APK 的兼容库记录了构建环境的 Termux 路径，系统驱动无需该搜索路径。
-    run_cmd([
-        patchelf_version_path_map[DEFAULT_PATCHELF_VERSION],
-        '--remove-rpath',
-        file_path,
-    ])
-
-
 blob_fixups: blob_fixups_user_type = {
-    'vendor/lib64/libcxx_shim.so': blob_fixup()
-        .call(remove_agd_shim_runpath),
-    # AGD 使用配套分配库；平台 libsync 实现导出未带版本的同签名 C 接口。
-    'vendor/lib64/libgsl.so': blob_fixup()
-        .replace_needed('libdmabufheap.so', 'libdmabufheap_agd.so')
-        .clear_symbol_version('sync_merge')
-        .clear_symbol_version('sync_wait'),
     # Xiaomi's libaudioroute_ext reads audio_route's internal structures,
     # whose layout changed in Android 16. Keep the whole prebuilt audio route
     # stack, which shares audio_route objects, on the Android 14 library.
