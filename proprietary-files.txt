@@ -550,12 +550,15 @@ vendor/firmware/gen70900_sqe.fw
 vendor/firmware/gen70900_zap.mbn
 vendor/firmware/gen80000_aqe.fw
 vendor/firmware/gen80000_gmu.bin
-vendor/firmware/gen80000_sqe.fw
 vendor/firmware/gmu_gen70900.bin
-vendor/gpu/kbc/sequence_manifest.bin
-vendor/gpu/kbc/unified_kbcs_32.bin
-vendor/gpu/kbc/unified_kbcs_64.bin
-vendor/gpu/kbc/unified_ksqs.bin
+
+# Graphics (v891.7 SQE and KBC)
+# 从 v891.7 dump 的 system 目录提取，供 dada 验证新驱动与配套数据。
+vendor/firmware/gen80000_sqe.fw|67dd77429c4b346ec2d76470351d9b16add9765f
+vendor/gpu/kbc/sequence_manifest.bin|e594bac3c4d878408b2b267627a4147c0caad3f9
+vendor/gpu/kbc/unified_kbcs_32.bin|205e8daeeb924551aa868a600c82421fc54482ce
+vendor/gpu/kbc/unified_kbcs_64.bin|ce24a4fc92e3b4b7b60496fd1412e8c07ff9668f
+vendor/gpu/kbc/unified_ksqs.bin|1e582dcd3765862282bd149a238837b3a389344a
 
 # Graphics (AGD 891.11.3)
 # 来自 AdrenoGraphicsDriver_891.11.3.apk；原始文件和修复后文件通过哈希固定。
